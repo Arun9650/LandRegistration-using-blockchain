@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Product NFT",
-  description: "personalized NFT for product",
+  description: "personalized NFT for product.",
 };
 
 export default function RootLayout({
