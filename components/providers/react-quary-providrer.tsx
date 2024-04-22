@@ -8,9 +8,9 @@ import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 const ReactQueryProvider = ({ children }: { children: React.ReactNode }) => {
   const [queryClient] = React.useState(() => new QueryClient());
   return (
-    <WagmiProvider config={config}>
-      <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider>{children}</RainbowKitProvider>
+    <WagmiProvider config={config} >
+      <QueryClientProvider client={queryClient}  >
+        <RainbowKitProvider >{children}</RainbowKitProvider>
       </QueryClientProvider>
     </WagmiProvider>
   );
