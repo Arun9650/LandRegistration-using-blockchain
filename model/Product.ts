@@ -1,6 +1,7 @@
 import mongoose, { Schema, model, Document } from 'mongoose';
 
 export   interface IProduct extends Document {
+  _id: string;
   title: string;
   img: string;
   price: number;
@@ -12,8 +13,10 @@ export   interface IProduct extends Document {
   numReviews: number;
   countInStock: number;
 }
+mongoose.Promise = global.Promise;
 
-const productSchema = new Schema<IProduct>({
+const productSchema = new Schema({
+ 
   title: {
     type: String,
     required: true
@@ -56,6 +59,6 @@ const productSchema = new Schema<IProduct>({
   }
 });
 
-const Product =  ( mongoose.models.Product as mongoose.Model<IProduct>) || mongoose.model<IProduct>('Products', productSchema);
+const Product =  mongoose.models.Product || mongoose.model('Products', productSchema);
 
 export default Product;

@@ -22,6 +22,7 @@ const NavBar = () => {
 
   const [cart, setCart] = useAtom<CardData[]>(cartAtom);
   const total  = cart.reduce((acc, item) => acc + item.price, 0)
+  const router = useRouter();
 
   return (
     <div className="w-full   px-4 py-5 mx-auto md:px-24 lg:px-8 bg-gray-200">
@@ -70,7 +71,7 @@ const NavBar = () => {
               <DropdownMenuLabel>{cart.length} Items</DropdownMenuLabel>
               <DropdownMenuItem>subtotal :  ${total}</DropdownMenuItem>
               <DropdownMenuItem>
-                <Button className="uppercase text-xs w-full">
+                <Button onClick={() => router.push("/cart")} className="uppercase text-xs w-full">
                   View Cart
                 </Button>
               </DropdownMenuItem>

@@ -14,6 +14,7 @@ import Image from "next/image";
 import { atom, useAtom } from 'jotai';
 import { IProduct } from "@/model/Product";
 import { cartAtom } from "@/lib/atoms";
+import Link  from "next/link";
 
 
 
@@ -35,9 +36,12 @@ const CustomCard : React.FC<{ cardData: CardData, width: number, height: number 
 
 
   return (  
-    <Card className=" flex justify-between shadow-lg flex-col">
+    
+    <Card   className=" flex justify-between shadow-lg flex-col">
       <CardHeader className="my-auto">
+      <Link href={`/product/${cardData._id}`} >
         <CardTitle className=" h-64  flex items-center" ><Image src={cardData.img} alt={cardData.title} width={width} height={height}/></CardTitle>
+      </Link>
       </CardHeader>
       <CardFooter className="flex justify-between ">
       <div className="flex flex-col">

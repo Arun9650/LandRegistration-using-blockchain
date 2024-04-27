@@ -5,6 +5,7 @@ import axios from "axios";
 import { IProduct } from "@/model/Product";
 import CustomCard from "@/components/ui/customcard";
 export default function Home() {
+  
   const { isPending, error, data, isFetching } = useQuery({
     queryKey: ["allProducts"],
     queryFn: () => axios.get("/api/allProducts").then((res) => res.data),
