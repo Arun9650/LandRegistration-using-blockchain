@@ -27,6 +27,7 @@ export const env = createEnv({
     NEXT_PUBLIC_POLYGON_CHAIN_ID:z.string(),
     NEXT_PUBLIC_BSC_CHAIN_ID: z.string(),
     NEXT_PUBLIC_GOERLI_CHAIN_ID: z.string(),
+    NEXT_PUBLIC_PINATA_JWT: z.string(),
   },
 
   /**
@@ -45,6 +46,7 @@ export const env = createEnv({
     NEXT_PUBLIC_GOERLI_CHAIN_ID: process.env.NEXT_PUBLIC_GOERLI_CHAIN_ID,
     NEXT_PUBLIC_ZETA_ERC20_SWAP_CONTRACT: process.env.NEXT_PUBLIC_ZETA_ERC20_SWAP_CONTRACT,
     NEXT_MONGO_URL: process.env.NEXT_MONGO_URL,
+    NEXT_PUBLIC_PINATA_JWT: process.env.NEXT_PUBLIC_PINATA_JWT,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially

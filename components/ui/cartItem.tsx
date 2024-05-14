@@ -1,10 +1,10 @@
 import Image from "next/image";
 import React from "react";
 import { RxCross2 } from "react-icons/rx";
-import { CardData } from "./customcard";
+import { IProduct } from "@/model/Product";
 
 const CartItem: React.FC<{
-  cardData: CardData;
+  cardData: IProduct;
   width: number;
   height: number;
   handleRemoveFromCart: () => void;

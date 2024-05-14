@@ -1,4 +1,4 @@
-import { CardData } from '@/components/ui/customcard'
+import { IProduct } from '@/model/Product'
 import {atom} from 'jotai'
 
-export const cartAtom = atom<CardData[]>([])
+export const cartAtom = atom<IProduct[]>([])

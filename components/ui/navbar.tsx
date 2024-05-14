@@ -15,12 +15,12 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "./button";
 import { cartAtom } from "@/lib/atoms";
-import { CardData } from "./customcard";
 import { useAtom } from "jotai";
+import { IProduct } from "@/model/Product";
 
 const NavBar = () => {
 
-  const [cart, setCart] = useAtom<CardData[]>(cartAtom);
+  const [cart, setCart] = useAtom<IProduct[]>(cartAtom);
   const total  = cart.reduce((acc, item) => acc + item.price, 0)
   const router = useRouter();
 
@@ -58,6 +58,8 @@ const NavBar = () => {
           <li>
             <ConnectButton />
           </li>
+
+          <Button onClick={() => router.push("/view")}>View Nft</Button>
 
           <DropdownMenu  >
             <DropdownMenuTrigger className="focus:outline-none relative">
