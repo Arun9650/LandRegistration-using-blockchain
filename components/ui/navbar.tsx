@@ -17,6 +17,8 @@ import { Button } from "./button";
 import { cartAtom } from "@/lib/atoms";
 import { useAtom } from "jotai";
 import { IProduct } from "@/model/Product";
+import CustomButton from "./CustomButton";
+import { WagmiButton } from "../Wagmi-button";
 
 const NavBar = () => {
 
@@ -56,7 +58,8 @@ const NavBar = () => {
         </div>
         <ul className=" items-center hidden space-x-8 lg:flex">
           <li>
-            <ConnectButton />
+            {/* <ConnectButton  /> */}
+            <WagmiButton/>
           </li>
 
           <Button onClick={() => router.push("/view")}>View Nft</Button>
