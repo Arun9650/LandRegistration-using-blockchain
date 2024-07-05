@@ -15,7 +15,7 @@ export default useFetchProductById;
 const fetchProductById = async (id: string ) => {
 
     try {
-        const data  = await axios.get(`http://localhost:3000/api/Product-by-id?id=${id}`);
+        const data  = await axios.get(`https://e-commers-nfts.vercel.app/api/Product-by-id?id=${id}`);
         return data;
       } catch (error) {
         throw error;
