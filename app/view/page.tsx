@@ -8,6 +8,7 @@ import React from "react";
 import { useReadContract } from "wagmi";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 type TIpfsData = {
   uri: string;
@@ -31,6 +32,7 @@ const ViewNFT = () => {
   });
 
   const [nftData, setNftData] = useState<TNFTData[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
   function getImageUrl(item: TNFTData, baseUrl: string): string {
     let imageUrl = item.image || item.img;
@@ -52,10 +54,29 @@ const ViewNFT = () => {
           })
         );
         setNftData(data);
+        setLoading(false);
       };
       fetchIPFSData();
     }
   }, [result.data, result.isSuccess]);
+
+
+  if(loading){
+    return ( <div className="max-w-6xl mx-auto">
+      <h1 className="text-3xl py-10 font-bold text-center">View NFT</h1>
+      <div className="grid grid-cols-4 gap-4">
+       <Skeleton/>
+      </div>
+    </div>)
+  }
+
+
+
+  if(nftData.length === 0){
+    return <div>No NFTs found</div>
+  }
+
+
 
   return (
     <div className="max-w-6xl mx-auto">

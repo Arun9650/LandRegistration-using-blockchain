@@ -19,11 +19,12 @@ const Cart = () => {
 
 
   const [cart, setCart] = useAtom(cartAtom);
+  console.log("🚀 ~ Cart ~ cart:", cart)
   const [totalPrice, setTotalPrice] = useAtom(totalPriceAtom);
   const [latestPrice, setLatestPrice] = useState(0);
 
-  const handleRemoveFromCart = (_id: string) => {
-    setCart((prevCart) => prevCart.filter((item) => item._id !== _id));
+  const handleRemoveFromCart = (id: string) => {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== id));
   };
 
   const { address } = useAccount();
@@ -134,16 +135,14 @@ const Cart = () => {
            {cart.map((cardData) => (
               <>
                 <CartItem
-                  key={cardData._id}
+                  key={cardData.id}
                   cardData={cardData}
                   width={300}
                   height={300}
                   handleRemoveFromCart={() =>
-                    handleRemoveFromCart(cardData._id as string)
+                    handleRemoveFromCart(cardData.id as string)
                   }
                 />
-
-               
               </>
             ))}
            </ScrollArea>

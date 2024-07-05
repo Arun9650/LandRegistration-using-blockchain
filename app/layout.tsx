@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import '@rainbow-me/rainbowkit/styles.css';
-import ReactQueryProvider from "@/components/providers/react-quary-providrer";
+import ReactQueryProvider from "@/components/providers/react-quary-provider";
 import NavBar from "@/components/ui/navbar";
 import {Provider} from 'jotai'
 import {Toaster} from 'react-hot-toast'
