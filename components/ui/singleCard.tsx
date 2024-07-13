@@ -5,7 +5,6 @@ import React from "react";
 import CustomButton from "./CustomButton";
 
 const SingleCard = ({ data2: data }: { data2: IProduct[] }) => {
-console.log("🚀 ~ SingleCard ~ data:", data)
 
   
 

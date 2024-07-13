@@ -19,7 +19,6 @@ const Cart = () => {
 
 
   const [cart, setCart] = useAtom(cartAtom);
-  console.log("🚀 ~ Cart ~ cart:", cart)
   const [totalPrice, setTotalPrice] = useAtom(totalPriceAtom);
   const [latestPrice, setLatestPrice] = useState(0);
 
@@ -39,10 +38,8 @@ const Cart = () => {
 
   useEffect(() => {
     if(isFetched  &&    LatestCryptoPrice){
-      console.log(LatestCryptoPrice);
 
       const Price = formatUnits(LatestCryptoPrice as bigint, 18);
-      console.log("🚀 ~ useEffect ~ Price:", Price)
 
       setLatestPrice(Number(Price));
     }
@@ -52,7 +49,6 @@ const Cart = () => {
 
 
   const handleChange = async (file: IProduct[]) => {
-    console.log("🚀 ~ handleChange ~ file:", file);
     try {
       const uploadPromises = file.map(async (item) => {
         try {
@@ -89,7 +85,6 @@ const Cart = () => {
           );
   
           const jsonDocData = await jsonDoc.json();
-          console.log(jsonDocData);
   
           const { request } = await simulateContract(config, {
             abi: abi,
@@ -99,27 +94,23 @@ const Cart = () => {
           });
   
           const hash = await writeContract(config, request);
-          console.log("🚀 ~ handleChange ~ hash:", hash);
   
           toast.success(`NFT minted successfully! Hash: ${hash}`);
   
           return hash;
         } catch (error) {
-          console.log(error);
           toast.error("Error minting NFT");
           throw error;
         }
       });
   
       const hashes = await Promise.all(uploadPromises);
-      console.log("Hashes:", hashes);
   
       toast.success("All NFTs minted successfully!");
   
       // Do something with the hashes if needed
   
     } catch (error) {
-      console.log(error);
       toast.error("Trouble minting NFTs");
     }
   };

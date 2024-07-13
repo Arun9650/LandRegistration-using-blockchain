@@ -1,7 +1,7 @@
 "use server";
 // import dbConnect from "@/lib/dbConnection";
 import Product, { IProduct } from "@/model/Product";
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/utils/supabase/client";
 export const fetchProductById = async (id: string) => {
   // await dbConnect();
 

@@ -19,7 +19,6 @@ const CustomCard: React.FC<{
   width: number;
   height: number;
 }> = ({ cardData, width, height }) => {
-  console.log("🚀 ~ cardData:", cardData)
   return (
     <Card className=" flex justify-between shadow-lg flex-col">
       <CardHeader className="my-auto">

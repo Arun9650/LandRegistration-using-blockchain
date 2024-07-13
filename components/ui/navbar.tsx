@@ -61,6 +61,7 @@ const NavBar = () => {
             {/* <ConnectButton  /> */}
             <WagmiButton/>
           </li>
+          <Button onClick={() => router.push("/create")}>Create Nft</Button>
 
           <Button onClick={() => router.push("/view")}>View Nft</Button>
 

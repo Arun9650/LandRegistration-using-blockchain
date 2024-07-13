@@ -49,7 +49,6 @@ const ViewNFT = () => {
           (result.data as TIpfsData[]).map(async (item) => {
             const response = await fetch(`https://ipfs.io/ipfs/${item.uri}`);
             const ipfsData = await response.json();
-            console.log("🚀 ~ data ~ ipfsData:", ipfsData);
             return ipfsData;
           })
         );
@@ -83,7 +82,6 @@ const ViewNFT = () => {
       <h1 className="text-3xl py-10 font-bold text-center">View NFT</h1>
       <div className="grid grid-cols-4 gap-4">
         {nftData.map((item: TNFTData) => {
-          console.log(item);
           return (
             <div key={item.name} className="bg-gray-300 p-4 rounded-lg">
               <Image
